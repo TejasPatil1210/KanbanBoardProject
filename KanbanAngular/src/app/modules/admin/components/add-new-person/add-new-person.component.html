@@ -1,0 +1,48 @@
+<div class="grid-container">
+    <mat-grid-list cols="2" rowHeight="350px">
+        
+          <mat-card class="dashboard-card">
+            
+            <mat-card-content class="dashboard-card-content"> 
+            
+              <div>
+               
+                  
+                    <div class = "header">
+                      <h2>Add new person</h2>
+                    </div>
+                    <form  name="addPersonForm" [formGroup]="addPersonForm">
+                      <div class="forms">
+                        <mat-form-field class="full-width" appearance ="outline">
+                          <mat-label>Name:</mat-label>
+                          <input formControlName="memberName" matInput required />
+                          <div *ngIf="addPersonForm.controls['memberName'].hasError('required')"></div>
+                           
+                        </mat-form-field>
+                      </div>
+                      <div class="forms">
+                        <mat-form-field class="full-width" appearance ="outline">
+                          <mat-label>Email Address:</mat-label>
+                          <input formControlName="memberEmail" matInput required />
+                          <div *ngIf="addPersonForm.controls['memberEmail'].hasError('required')"></div>
+                        </mat-form-field>
+                      </div>
+    
+                      <button mat-flat-button color = "primary" [disabled]="addPersonForm.invalid" (click)="addPerson()">Add to account</button>&nbsp;&nbsp;
+                      <button mat-flat-button color = "primary" (click)="cancel()">cancel</button>
+                    </form>
+                 
+                
+              </div>
+    
+            </mat-card-content>
+          </mat-card>
+       
+      </mat-grid-list>
+    </div>
+     
+     
+     
+     
+     
+     

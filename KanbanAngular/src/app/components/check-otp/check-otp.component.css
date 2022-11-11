@@ -1,0 +1,31 @@
+.toolbar{
+    background-color: #897622;
+    font-family: 'Poppins',sans-serif;
+}
+
+p{
+    padding-top: 7%;
+    font-size: larger;
+}
+input[type="submit"]
+{
+    background-color: #897622;
+    color:azure;
+}
+a{
+    color: #897622;
+}
+.content {
+    position: absolute;
+    top: 45.8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    text-align: center;
+    padding: 42px 32px;
+    background: rgba(190, 193, 190, 0.936);
+    box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+    width: 500px;
+    height: 280px;
+    /* opacity: 0.8; */
+}

@@ -1,0 +1,43 @@
+
+<mat-toolbar class="" color="primary">
+    <mat-toolbar-row>
+        <label style="color: azure;margin-left: 3%;"><b>Kanban Board</b></label>
+        <a class="nav-link" routerLink="./home-dashboard">
+        <button mat-icon-button style="color: azure;margin-left: 10%;margin-left: 300%;">
+           <p>DashBoard</p>
+          </button></a>
+          
+            <a class="nav-link" routerLink="./people">  
+        <button mat-icon-button style="color: azure;margin-left: 500%;">
+            <p>People</p>
+           </button></a>
+
+         <!-- <button mat-icon-button style="color: rgb(38, 27, 124);margin-left: 45%;">
+           
+           
+       <mat-icon style="size-adjust: 5px;">settings</mat-icon>
+            account Administration
+        </button> -->
+
+        <button mat-icon-button style="background-color:rgba(74, 42, 4, 0.086) ;margin-left: 60%;"> 
+            <mat-icon style="color: azure;margin-top: -3px;" aria-label="sidenav.toggle();">person</mat-icon> 
+        </button>
+        <button mat-button [matMenuTriggerFor]="menu">
+            <small style="font-size:15px ;margin-top: 10px;color: azure;text-transform: uppercase;font-size: larger;">{{a}}</small>&nbsp;&nbsp;
+         
+
+        <mat-icon style="color:azure">keyboard_arrow_down</mat-icon></button>
+
+        <mat-menu #menu="matMenu">
+            <a routerLink="my-profile">
+            <button mat-menu-item><mat-icon>person</mat-icon>My Profile</button></a>
+            
+            <button mat-menu-item (click)="signout()">	<mat-icon>assignment_return</mat-icon>Sign Out</button>
+        </mat-menu>
+
+
+
+
+
+    </mat-toolbar-row>
+</mat-toolbar> 

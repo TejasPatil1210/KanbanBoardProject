@@ -1,0 +1,106 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding:100px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 100px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+header .logo
+{
+    position: relative;
+    max-width: 80px;
+}
+header ul 
+{
+    position: relative;
+    display: flex;
+}
+header ul li{
+    list-style: none;
+}
+header ul li a{
+    display:inline-block;
+    color:#333;
+    font-weight: 400;
+    margin-left: 40px;
+    text-decoration: none;
+}
+.content
+{
+    position:relative;
+    width:100%;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.content .textBox
+{
+    position:relative;
+    max-width: 600px;
+}
+.content .textBox h2
+{
+color:#333;
+font-size: 4em;
+line-height: 1.4em;
+font-weight: 500;
+margin-top: 10%;
+}
+.content .textBox h2 span{
+    color: #897622;
+    font-size:1.2em;
+    font-weight: 900;
+}
+.content .textBox p{
+    color:#333;
+    font-size: 200%;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.content .imgBox
+{
+    width:600px;
+    display:flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+.content .imgBox img{
+    max-width: 600px;
+    margin-top:-20%;
+}
+.circle
+{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: #897622;
+    clip-path: circle(600px at right 800px);
+}
+.button1{
+    background: #897622;
+    color:#fff;
+    border-radius: 100px;
+}

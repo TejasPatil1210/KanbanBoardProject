@@ -1,0 +1,74 @@
+
+    <div class="grid-container">
+      <mat-grid-list cols="2" rowHeight="500px"> 
+        <mat-card   class="example-card" style="width: 750px; height: 500px; margin-left:25%;margin-top: 5% ;">
+          <mat-card-title>My Profile</mat-card-title><br><br>
+          
+            <mat-card-content>
+             
+                <div class="alignment">
+                    <table class="table table-borderless">
+                        
+                        <tbody>
+                          <tr>
+                            
+                            <td>Name :</td>
+                            <td>{{user.userName}}</td>
+                            
+                          </tr>
+                          <tr>
+                            
+                            <td>Email :</td>
+                            <td>{{userEmail}}</td>
+                           
+                          </tr>
+                          <tr>
+                            
+                            <td>Location :</td>
+                            <td>India</td>
+                            
+                          </tr>
+                          <tr>
+                           
+                            <td>Language :</td>
+                            <td>English</td>
+                            
+                          </tr>
+                          <tr>
+                        
+                            <td>Login Time :</td>
+                            <td>{{time}}</td>
+                            
+                          </tr>
+                          <tr>
+                           
+                            <td>Login date :</td>
+                            <td>{{date}}</td>
+                           
+                          </tr>
+                        </tbody>
+                      </table>
+                          <!-- Email : {{userEmail}}<br><br>
+                    Name : {{userName}}<br><br>
+                    Location : India<br><br>
+                    Language : English<br><br>
+                    Login Time : {{time}}<br><br>
+                    Login Date : {{date}}<br><br> -->
+                    <!-- <div style="margin-left:75%;margin-top:-25%" (click)="editProfile()">
+                      <a routerLink="/admin/edit-profile">
+                      <mat-icon >edit</mat-icon>
+                      Edit Profile</a><br><br><br> -->
+                      <!-- <a routerLink="/admin/change-password">
+                      <mat-icon>lock</mat-icon>
+                      Change Password</a> -->
+                      <button type="submit" mat-flat-button color = "primary"  (click)="editProfile()">Change Password</button>&nbsp;&nbsp;
+            </div>
+            </mat-card-content>
+        </mat-card>
+      </mat-grid-list>
+    </div>
+    
+
+         
+    
+  

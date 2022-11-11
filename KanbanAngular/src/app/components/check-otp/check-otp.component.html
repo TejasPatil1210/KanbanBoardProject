@@ -1,0 +1,37 @@
+<mat-toolbar class="toolbar">
+    <mat-toolbar-row>  
+        <label style="color: azure;margin-left: 1%;"><b>Kanban Board</b></label>
+        <label (click)="home()" style="color: azure;margin-left: 82%;font-size: large;"><b>Home</b></label>
+        <!-- <label (click)="login()"  style="color: rgb(36, 30, 30);font-size: large;"><b>Login</b></label> -->
+    </mat-toolbar-row>
+</mat-toolbar>
+<body style="height:91.5%;width:100% ;margin-top:0px; background-image: url(https://thumbs.dreamstime.com/z/scrum-kanban-board-list-work-task-management-kanban-boa[…]ask-management-iteration-scrum-agile-concept-202603353.jpg);
+ background-repeat: no-repeat;  
+background-size:cover;">
+
+    <mat-card class="content" >
+        <!-- style="width: 500px; height: 250px; margin-left:35%;margin-top: 1%;" -->
+
+           
+                <h2 style="text-align: center;margin-top: 10px;margin-left: -10px;">
+                   <b> Enter OTP</b></h2>
+           
+        
+        <mat-card-content>
+
+
+            <form  name="checkOtpForm" [formGroup]="checkOtpForm">
+                
+        
+                        <input type="email" id="email" placeholder="plaese enter OTP here..." class="form-control" formControlName="otp" />
+                    <br>
+                    <input type="submit" class="btn btn w-100" value="Submit" style="font-weight: 500;"  [disabled]="!checkOtpForm.valid" (click)="checkOtp()"><br><br>
+                
+                    <!-- <div class="card-footer text-right">
+                        <small>Ohh I remember <a routerLink="../login">Back to Login</a></small>
+                    </div>               -->
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+</body>

@@ -1,0 +1,37 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- <mat-drawer-container class="example-container">
+    <mat-drawer  #sideNav mode="side" opened="true" position="end">Drawer content</mat-drawer>
+    <mat-drawer-content>Main content</mat-drawer-content>
+  </mat-drawer-container> fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false"-->
+      <!-- <mat-sidenav #drawer class="sidenav" fixedInViewport
+      mode="side"  
+      opened="true"
+      position="end"
+    style="width: 150px;margin-left:50px ;background-color:rgb(93, 93, 249)">
+    </mat-sidenav>    -->
+  <mat-sidenav-content>    
+    <mat-toolbar color="primary" style="height:8% ;left:0px ">
+      <!-- <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"> -->
+        <!-- <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button> -->
+      <button mat-icon-button>      
+        <mat-icon style="font-size: 20px;"(click)="navigate()">clear</mat-icon>
+      </button>
+       <pre>  </pre> 
+      <!-- <mat-icon>highlight_off</mat-icon> -->
+      <span style="font-size: 20px;font-family:inherit ">Create a new board</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <app-board-details></app-board-details>
+  </mat-sidenav-content>
+  
+</mat-sidenav-container>
+

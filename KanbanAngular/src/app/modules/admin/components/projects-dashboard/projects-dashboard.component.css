@@ -1,0 +1,16 @@
+:host /deep/ .ngx-pagination {
+    padding-left: 0px;
+  }
+  
+  :host /deep/.ngx-pagination .current,
+  .btn-info {
+    background: #897622 !important;
+    border: transparent;
+    border-radius: 20px;
+  }
+  
+  :host /deep/.ngx-pagination .current:hover {
+    background: #897622 !important;
+    border-radius: 20px;
+    border: transparent;
+  }

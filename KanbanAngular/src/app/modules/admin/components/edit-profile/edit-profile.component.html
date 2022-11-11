@@ -1,0 +1,28 @@
+<mat-card class="grid-container">
+    <mat-card-header>
+
+        <mat-card-title>Edit Details</mat-card-title>
+
+    </mat-card-header>
+<mat-card-content style="width:50%;padding-left:4%">
+
+
+    <form  name="resetForm" [formGroup]="resetForm">
+        <p >
+            <mat-form-field class="full-width" appearance ="outline" style="width:130%">
+                <input type="text" matInput required placeholder="userName" formControlName="userName">
+                
+                <div *ngIf="resetForm.controls['userName'].hasError('required')"></div>
+            </mat-form-field>
+        <p><br><br>
+        
+
+    
+        <button type="submit" mat-flat-button color="primary" [disabled]="resetForm.invalid" (click)="submit()">Click to update</button>
+    </form>
+
+</mat-card-content>
+</mat-card>
+
+
+

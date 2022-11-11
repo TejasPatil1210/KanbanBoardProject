@@ -1,0 +1,97 @@
+
+ <div class="container">
+  <div style="margin-left:63%;margin-top:4%;">
+  <button mat-raised-button color="primary" (click)="addPeople()"><mat-icon>person_add</mat-icon>&nbsp;&nbsp;Add new person</button>
+</div>
+  <div style="margin-top:10px;">
+    <mat-form-field appearance="standard">
+      
+      <mat-label>Filter</mat-label>
+      
+      <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+    </mat-form-field>
+    
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="memberName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let row of project"> {{row.memberName}} </td>
+        </ng-container>
+    
+        <!-- Email Column -->
+        <ng-container matColumnDef="memberEmail">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let row of project"> {{row.memberEmail}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
+          <td mat-cell *matCellDef="let row ">
+          <button mat-icon-button color="primary" (click)="deleteMember(row.memberEmail)"><mat-icon>delete</mat-icon></button></td>
+        </ng-container>
+       
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+    
+  </div>
+ </div>
+
+
+
+
+
+
+
+
+
+ <!--  
+    
+  
+  <div class="grid-container">
+    <mat-grid-list cols="2" rowHeight="500px"> 
+    <mat-card class="dashboard-card">
+      
+    <mat-card-content class="dashboard-card-content"> 
+      <div class="person">
+        <mat-icon>person_add</mat-icon>
+        <button mat-flat-button (click)="addPeople()">Add new person</button> </div>  
+      <div class="example-button-row">
+      
+      </div>
+      <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let x of project">
+          <tr>
+          <td>{{x.memberName}}</td>
+          <td >{{x.memberEmail}}</td>
+          
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+</mat-grid-list>
+</div>
+
+ -->

@@ -1,0 +1,118 @@
+<!-- 
+<mat-toolbar class="" color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle()" style="background-color:bisque ;">
+    <mat-icon style="color: rgb(29, 26, 26);" aria-label="sidenav.toggle();">menu</mat-icon>
+  </button>
+        <label style="color: rgb(38, 27, 124);margin-left: 45%;"><b>Kanban Board</b></label>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container style="height: 100%;">
+    <mat-sidenav #sidenav opened="false" [mode]="(isHandset$ | async) ? 'over' : 'side'">
+        <mat-nav-list>
+            <button mat-list-item (click)="reg()"style="background-color: rgb(92, 91, 91); margin-top: 5px;color: white;">
+                <mat-icon>Register</mat-icon> Register
+            </button>
+        </mat-nav-list>
+    </mat-sidenav>
+     <mat-sidenav-content>
+        <mat-card style="width: 350px; height: 350px; margin-left:40%;margin-top: 5% ;">
+            <mat-card-header>
+
+                <mat-card-title>
+                    <div style="margin-left:40%">Welcome</div><br>
+                    <p><small style="color: lightslategray;text-align: center;">
+                        Please enter your login details</small></p></mat-card-title>
+               
+            </mat-card-header>
+            <mat-card-content>
+
+
+                <form  name="loginForm" [formGroup]="loginForm">
+                    <p>
+                        <mat-form-field class="full-width" appearance ="outline">
+                            <input type="text" matInput required placeholder="Email *" formControlName="userEmail">
+                            <div *ngIf="loginForm.controls['userEmail'].hasError('required')"></div>
+                        </mat-form-field>
+                    </p>
+
+                    <p>
+                        <mat-form-field class="full-width" appearance ="outline">
+                            <input type="password" matInput required placeholder="Password *" formControlName="password">
+                            <div *ngIf="loginForm.controls['password'].hasError('required')"></div>
+                        </mat-form-field>
+                    </p>
+
+                  
+
+                    <div>
+                        <button type="submit" mat-flat-button color = "primary" [disabled]="!loginForm.valid" (click)="onLogin()">Login</button>&nbsp;&nbsp;
+                        <div class="forgotPassword">
+                            <small><a routerLink="../forgot-password">Forgot Password</a></small>
+                        </div>
+                        
+                    </div>
+                    
+                       
+                   
+
+                </form>
+
+            </mat-card-content>
+        </mat-card>
+
+ 
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container> 
+
+
+
+ -->
+
+ <mat-toolbar class="toolbar">
+    <mat-toolbar-row>
+        
+    <!-- <mat-icon style="color: rgb(29, 26, 26);" aria-label="sidenav.toggle();">menu</mat-icon> -->
+  
+        <!-- <label style="color: azure;margin-left: 1%;">
+            <img src="https://1.bp.blogspot.com/--cxT0yBG-Pk/Wmht5GxxJmI/AAAAAAAABrc/pD6chwBsU3kC_OCfPc6Cgg5unJAaPQ2pwCLcBGAs/s1600/kanban%2Bblog%2B01.png
+            (271 kB)" style="width:200px; height:100px;margin-top:25px;"></label> -->
+            <label style="color: azure;margin-left: 1%;"><b>Kanban Board</b></label>
+            <label (click)="home()" style="color: azure;margin-left: 83%;font-size: large;"><b>Home</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!-- <label (click)="reg()"  style="color: azure;font-size: large;"><b>Register</b></label> -->
+    </mat-toolbar-row>
+</mat-toolbar>
+ <body style="height: 91.3%;width:100% ;">
+    <section style="height: 100%;">
+        <div class="imgBx" style="height: 100%;">
+          <img src="img6.jpg" >  
+        </div>
+        <div class="contentBx" style="height: 100%;">
+            <div class="formBx">
+                <h2>Login</h2>
+                <form name="loginForm" [formGroup]="loginForm">
+                    <div class="inputBx">
+                        <span>Email</span>
+                        <input type="text" matInput required formControlName="userEmail">
+                    </div>
+                    <div class="inputBx">
+                        <span>Password</span>
+                        <input type="password" matInput required formControlName="password">
+                    </div>
+                    <div class="remember">
+                        <p><a href="../forgot-password">Forgot password?</a></p>
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" value="Sign in" (click)="onLogin()">
+                    </div>
+                    <div class="inputBx">
+                        <p>Don't have an account?<a href="register">Sign up</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+ </body>

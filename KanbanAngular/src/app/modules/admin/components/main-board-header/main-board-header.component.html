@@ -1,0 +1,62 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === true"
+        style="width: 260px; background-color: whitesmoke;">
+
+        <!-- <div style="display:inline;">
+        <a href="/admin/home-dashboard" style="text-decoration: none;color: black; display: inline;">
+          <button mat-icon-button style="margin-top: 15px;">
+          <mat-icon>home</mat-icon></button>
+        <span style="font-size: 18px; margin-left:10px;">{{userName}}</span></a>
+      </div> -->
+
+       <div style="height:50px ;width:100%;margin-top: 20px;">
+        <div style="float: left ;height:40px;width:12%">
+          <mat-icon style="margin-top:8px ;margin-left:5px ;">home</mat-icon>  
+        </div>
+        <div  style="float: left ;height:40px;text-align: center;width:173px;">
+          <a routerLink="/admin/home-dashboard" style="text-decoration: none;color: black;">
+          <h4 style="font-size: 18px;margin-top: 9px;">        
+           <b appUnderline> {{userName}}</b>
+          </h4>
+        </a>
+        </div> 
+
+      <div style="float: left;align-items: center;">
+        <a routerLink="/admin/home1/showboard/{{projectName}}/ ">
+        <button mat-icon-button matTooltip="create new board">
+          <mat-icon style="color: black;">
+        add</mat-icon></button></a></div>
+      </div>
+
+      <mat-nav-list>
+        <div *ngFor="let x of allProjects">
+
+
+
+        <a mat-list-item routerLink="/admin/showboard/{{x.projectName}}" (click)="getBgImg(x)" ><span appUnderlineForProjects>{{x.projectName}}</span></a>
+
+
+
+      </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content style="height:100%; background-image:url({{projBgImg}});background-repeat: no-repeat;  
+    background-size:cover;">
+      <mat-toolbar style="height: 40px; background-color:transparent;">
+        <button mat-icon-button aria-label="Example icon-button with a menu" (click)="drawer.toggle()">
+          <mat-icon >menu</mat-icon>
+        </button>
+        <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button> -->
+        <span>{{projectName}}</span>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+      <!-- <app-main-board-dashboard [projName]=projectName></app-main-board-dashboard> -->
+      <!-- Add Content Here -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

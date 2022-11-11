@@ -1,0 +1,113 @@
+<form [formGroup]="boardForm">
+    <div *ngIf=checkBoardPgStat style="width: 50%; font-family:inherit;margin-top: 205px;margin-left: 80px;">
+        <h1 style="font-size: 24px; font-family:inherit; color: gray;margin-left: 0px;">Start by giving a name to your new board</h1>
+        <!-- <form [formGroup]="boardForm">       -->
+                   
+              <mat-form-field appearance="fill" style="width:620px;background-color:rgb(252, 251, 251);margin-top: 55px;" > 
+                <!-- <mat-label>Enter the new board's name</mat-label> -->
+                <input type="text"  matInput  formControlName="projectName" placeholder="Enter the new board's name"
+                 style="font-size: 30px;"  maxlength="40" autofocus>
+              </mat-form-field>
+    
+        
+    <p style="font-size: 17px;color: grey;margin-top: 17px;">What process or project do you want to organize on this board? A good name<br> should be short and reflect the purpose of the board.</p>
+              <br>
+              <br>
+              <button mat-raised-button (click)="onClickofBoardPageNext()" [disabled]="this.boardForm.controls['projectName'].invalid" style="margin-top: 50px;
+              margin-left: 510px;width:105px;font-size: 20px;background-color: #897622;color: azure">Next</button>
+              <br>
+              <br> 
+    <!-- </form> -->
+    </div>
+    
+    <div *ngIf=checkColumnPgStat style="width: 92%; font-family:inherit;margin-top: 180px;margin-left: 80px;">
+        <h1 style="font-size: 24px; font-family:inherit; color: gray;margin-left: 20px;">What is the <b>{{bName}}</b> workflow?</h1>
+        
+        <!-- <form [formGroup]="boardForm">boardcolumns.controls  console.log(this.boardcolumns.controls[0].value.columnName)-->
+          <div style="width: 53%;float: left;">
+              
+            <div  *ngFor="let value of boardcolumns.controls; last as isLast; index as idx;" style="display: inline-block;" >
+           
+              <mat-form-field appearance="fill" style="width:266px;background-color:rgb(252, 251, 251);
+              margin-top: 55px;margin-left:70px;" *ngIf="idx==1 || idx==3">
+              <input type="text" matInput [formControl]="value.controls['columnName']" style="font-size: 20px;"  maxlength="20" placeholder="..." autofocus>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" style="width:266px;background-color:rgb(252, 251, 251);
+              margin-top: 55px;margin-left:18px;" *ngIf="idx==0 || idx==2 || idx>3">
+              <input type="text" matInput [formControl]="value.controls['columnName']" style="font-size: 20px;"  maxlength="20" placeholder="..." autofocus>
+              </mat-form-field>
+
+              <button mat-icon-button color="warn" (click)="onClickRemove(idx)" *ngIf="idx>2" style="width:50px;height: 45px;" >
+                <mat-icon style="font-size: 37px; height: 40px;width: 50px;padding-top: 10px;margin-bottom: 15px ;">remove_circle</mat-icon>
+                </button>
+              <button mat-icon-button color="primary" (click)="onClickAdd()" *ngIf="isLast" style="width:50px;height: 45px;" >
+              <mat-icon style="font-size: 37px; height: 40px;width: 50px;padding-top: 10px;margin-bottom: 15px ;">add_circle</mat-icon>
+              </button>
+            </div>
+            <br><br>
+            <div>
+              <button mat-raised-button (click)="onClickofColumnPageback()" style="display: inline; margin-left: 20px;
+              width:105px;font-size: 20px;background-color:white;color: #897622;">Back</button>
+              <button mat-raised-button (click)="onClickofColumnPageNext()"  style="display: inline;
+                margin-left: 450px;width:105px;font-size: 20px;background-color: #897622;color: azure;">Next</button>
+            </div>
+            <br>
+            <br>
+          </div>
+            <div style="width: 600px;position: relative;float: left;margin-top: 50px;margin-left: 30px;">
+              <h1 style="font-size: 24px; font-family:inherit; color: gray;margin-left: 0px;">
+                Think about the process that you want to <br> visualize on your board. What is the sequence <br>
+                of characteristic steps that work items go<br> through from the start of work to finish? Write <br>
+                each of them into the form on the left - they<br> will become columns of your board. 
+              </h1>
+              <br>
+              <br>
+              <h3 style="font-family:inherit; color: gray;margin-left: 0px;">See examples for:</h3>
+              <button mat-flat-button (click)="onClickBasic()" style="background-color: rgb(227, 226, 226); color: gray;margin: 10px;
+              padding-left: 25px;padding-right: 25px;border-radius: 20px;" >basic</button>
+              <button mat-flat-button (click)="onClickTimeDriven()" style="background-color: rgb(227, 226, 226); color: gray; margin: 10px;
+              padding-left: 25px;padding-right: 25px;border-radius: 20px;">time driven</button>
+              <button mat-flat-button (click)="onClickEventDriven()" style="background-color: rgb(227, 226, 226); color: gray; margin: 10px;
+              padding-left: 25px;padding-right: 25px;border-radius: 20px;">event driven</button>
+              <button mat-flat-button (click)="onClickTeamBasic()" style="background-color: rgb(227, 226, 226); color: gray; margin: 10px;
+              padding-left: 25px;padding-right: 25px;border-radius: 20px;">team basic</button>
+              <button mat-flat-button (click)="onClickProductDev()" style="background-color: rgb(227, 226, 226); color: gray; margin: 10px;
+              padding-left: 25px;padding-right: 25px;border-radius: 20px;">product dev.</button>
+              <button mat-flat-button (click)="onClickSalesPipeline()" style="background-color: rgb(227, 226, 226); color: gray; margin: 10px;
+              padding-left: 25px;padding-right: 25px;border-radius: 20px;">sales pipeline</button>
+              <button mat-flat-button (click)="onClickOnlineMarketing()" style="background-color: rgb(227, 226, 226); color: gray; margin: 10px;
+              padding-left: 25px;padding-right: 25px;border-radius: 20px;">online marketing</button>
+            </div>
+              
+              
+    <!-- </form> -->
+    
+    </div>
+    
+    <div *ngIf=checkBgPgStat style="width: 60%;height: 250px; font-family:inherit;margin-top: 50px;margin-left: 80px;" >
+      <h1 style="font-size: 24px; font-family:inherit; color: gray;margin-left: 0px;">Pick a background for your board</h1>
+      <br>
+      <!-- <form [formGroup]="boardForm"> -->
+            <div style="overflow-y: scroll; height: 460px;width:720px ;">
+            <div *ngFor="let x of allImages" style="display: inline-block;margin:5px;" >
+            <a ><img appImage src="{{x.imageUrl}}" alt="img" (click)="onSelect(x.imageUrl)" height="140px" width="220px" /></a>
+            <!-- <a ><img  [appImage]src={{x.imageUrl}} alt="img" (click)="onSelect(x.imageUrl)" height="140px" width="220px" /></a> -->
+            </div>
+            <br>
+            <br>
+            </div>
+            <br>
+            <br>
+            <button mat-raised-button (click)="onClickofBgPageBack()" style="display: inline; margin-left: 0px;
+            width:105px;font-size: 20px;background-color:white;color: #897622;">Back</button>
+            <!-- <button mat-raised-button (click)="onClickofColumnPageback()" style="display: inline; margin-left: 370px;
+            width:105px;font-size: 20px;background-color:white;color: black;">Finish</button> -->
+            <button mat-raised-button (click)="onClickFinish()" [disabled]="this.boardForm.controls['projectBgImage'].invalid" style="display: inline;
+              margin-left: 480px;width:105px;font-size: 20px;background-color: #897622;color: azure;">Finish</button>
+          <br>
+          <br>
+        </div>
+    </form>
+    <!-- <router-outlet></router-outlet> -->
+    <!-- </div> -->

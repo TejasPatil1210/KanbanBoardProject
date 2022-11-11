@@ -1,0 +1,26 @@
+server:
+  port: 8082
+spring:
+  data:
+    mongodb:
+      database: kanbandb
+      uri: mongodb://localhost:27017/
+  application:
+    name: kanban-service
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: kanbanboard.niit@gmail.com
+    password: wlxjuknbkrxoabec
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_SERVER_IP:localhost}:${EUREKA_SERVER_PORT:8761}/eureka
+    fetchRegistry: true
+    registerWithEureka: true

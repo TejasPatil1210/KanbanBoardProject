@@ -1,0 +1,19 @@
+<form  [formGroup]="columnForm" style="font-family:inherit;height:200px ;width:400px ; " >
+    <!-- <mat-card> -->
+    <!--  mat-button -->
+    <div>
+        <!-- <button mat-icon-button style="background-color:transparent;"> -->
+            <mat-icon mat-dialog-close style="font-size: 27px;font-weight: bold;margin-left: 370px;">close</mat-icon>
+        <!-- </button> -->
+    </div>
+    <br>
+               
+    <mat-form-field id="namecolumn" class="example-full-width" style="width: 100%" appearance="fill">
+        <mat-label style="font-size: 20px;font-weight:500;">Column Name</mat-label>
+        <input type="text" matInput formControlName="columnName" style="font-size: 20px;font-weight:500;
+        " maxlength="40" placeholder="give the name for this Column...">
+    </mat-form-field>
+    <br>
+    <br>
+    <button mat-raised-button (click)="createColumn()" color="primary" style="margin-left:0px; height: 40px;"[disabled]="this.columnForm.controls['columnName'].invalid" mat-dialog-close>Create and Close</button>
+</form>

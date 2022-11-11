@@ -1,0 +1,150 @@
+<!-- <mat-toolbar class="" color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle()" style="background-color:bisque ;">
+    <mat-icon style="color: rgb(29, 26, 26);" aria-label="sidenav.toggle();">menu</mat-icon>
+  </button>
+        <label style="color: rgb(38, 27, 124);margin-left: 45%;"><b>Kanban Board</b></label>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container style="height: 100%;">
+    <mat-sidenav #sidenav opened="false" [mode]="(isHandset$ | async) ? 'over' : 'side'">
+        <mat-nav-list>
+            <button mat-list-item (click)="login()" style="background-color: rgb(92, 91, 91);color: rgb(232, 224, 224);">
+                <mat-icon>home</mat-icon> Login
+            </button>
+
+            
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content> -->
+
+<!-- <body style=" background-image:url('../assets/kanbanboard.jpg');"> -->
+        <!-- <mat-card class="example-card" style="width: 400px; height: 500px; margin-left:40%;margin-top: 5% ;">
+            <mat-card-header>
+
+                <mat-card-title style="margin-left:150%">Register</mat-card-title>
+
+            </mat-card-header>
+            <mat-card-content>
+
+                <form name="registerForm" [formGroup]="registerForm" action="">
+
+                    <p>
+                        <mat-form-field style="width: 100%;">
+                            
+                            <input type="text" matInput required placeholder="Username" formControlName="userName">
+                            <div *ngIf="registerForm.controls['userName'].hasError('required')"></div>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field style="width: 100%;">
+                            
+                            <input type="email" matInput required placeholder="Email" formControlName="userEmail">
+                            <div *ngIf="registerForm.controls['userEmail'].hasError('required')"></div>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field style="width: 100%;">
+                           
+                            <input type="password" matInput required placeholder="Password" formControlName="password">
+                            <div *ngIf="registerForm.controls['password'].hasError('required')"></div>
+                        </mat-form-field>
+                    </p>
+
+
+                    <p>
+                        <mat-form-field style="width: 100%;">
+                            
+                            <input type="password" matInput required placeholder="Confirm Password" formControlName="confirm_password">
+                            <div *ngIf="registerForm.controls['confirm_password'].hasError('required')"></div>
+                        </mat-form-field>
+                    </p>
+
+                   
+                    
+                <button type="submit" mat-flat-button color="primary" [disabled]="!(registerForm.value.password==registerForm.value.confirm_password ) || registerForm.invalid" (click)="submit()">Register</button>
+                  
+
+                </form>
+
+            </mat-card-content>
+        </mat-card>
+    <!-- </body> -->
+    <!-- </mat-sidenav-content>
+</mat-sidenav-container> --> 
+
+
+<mat-toolbar class="toolbar" >
+    <mat-toolbar-row >
+        
+    <!-- <mat-icon style="color: rgb(29, 26, 26);" aria-label="sidenav.toggle();">menu</mat-icon> -->
+  
+        <!-- <label style="color: azure;margin-left: 1%;">
+            <img src="https://1.bp.blogspot.com/--cxT0yBG-Pk/Wmht5GxxJmI/AAAAAAAABrc/pD6chwBsU3kC_OCfPc6Cgg5unJAaPQ2pwCLcBGAs/s1600/kanban%2Bblog%2B01.png
+            (271 kB)" style="width:200px; height:100px;margin-top:25px;"></label> -->
+            <label style="color: azure;margin-left: 1%;"><b>Kanban Board</b></label>
+        <label (click)="home()" style="color: azure;margin-left: 77%;font-size: large;"><b>Home</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label (click)="login()"  style="color: azure;font-size: large;"><b>Login</b></label>
+    </mat-toolbar-row>
+</mat-toolbar>
+<!-- <mat-sidenav-container style="height: 100%;">
+    <mat-sidenav #sidenav opened="false" [mode]="(isHandset$ | async) ? 'over' : 'side'">
+        <mat-nav-list>
+            <button mat-list-item (click)="login()" style="background-color: rgb(92, 91, 91);color: rgb(232, 224, 224);">
+                <mat-icon>home</mat-icon> Login
+            </button>
+
+            
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content> -->
+<body class="bg-img" style="margin-top: 0px;background-color:red ;">
+   <!-- // <mat-card style="background-color: blue;"> -->
+    <mat-card-content>
+    <div >
+        <div class="content">
+            <header>Register Form</header>
+            <form name="registerForm" [formGroup]="registerForm" action="">
+                
+                <div class="field">
+                    <input style="color: black;" type="text" required placeholder="Username" formControlName="userName">
+                    <!-- <div *ngIf="registerForm.controls['userName'].hasError('required')"></div> -->
+                </div><br>
+                 <div class="field">
+                    <input style="color: black;" type="email" matInput required placeholder="Email" formControlName="userEmail">
+                 </div>
+           
+                <div class="field space">
+                    
+                    <input style="color: black;" type="password" required placeholder="Password" formControlName="password">
+                    <!-- <div *ngIf="registerForm.controls['password'].hasError('required')"></div> -->
+                </div>
+            
+            
+                <div class="field space">
+                    
+                    <input style="color: black;" type="password" required placeholder="Confirm Password" formControlName="confirm_password">
+                    <!-- <div *ngIf="registerForm.controls['confirm_password'].hasError('required')"></div> -->
+                </div>
+                
+                <br><br>
+               
+                <div >
+                    <button class="field1" type="submit"  [disabled]="!(registerForm.value.password==registerForm.value.confirm_password ) || registerForm.invalid" (click)="submit()" >REGISTER</button>
+                  
+                </div>
+                
+                <br>
+                <div class="signup">Already have an account?
+                    <a href="login">LogIn Now</a>
+                </div>
+            </form>
+        </div>
+    </div>
+        </mat-card-content>
+   <!-- // </mat-card>  -->
+<!-- </mat-sidenav-content>
+</mat-sidenav-container> -->
+        
+    
